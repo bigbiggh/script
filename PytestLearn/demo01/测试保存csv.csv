@@ -1,0 +1,13 @@
+,case_id,case_module,case_class,case_function,cg_num
+0,1,warehouse,test_warehouse,test_Receipt_Purchase_orders,"{""cg_num"":""20220325[H]00008"",""wlbm"":""32500"",""wlmc"":""556458456"",""gys_name"":""深圳南山"",""gys_num"":""9527"",""print_template_name"":""KHBQTEST"",""print_template_type"":""原材料包装""}"
+1,2,,,test_Other_receipts,"{""cg_num"":""20220325[H]00008"",""wlbm"":""32500"",""wlmc"":""556458456"",""gys_name"":""深圳南山"",""gys_num"":""9527"",""print_template_name"":""KHBQTEST"",""print_template_type"":""原材料包装""}"
+2,2,,,test_Complete_process,"{""wlxh"":""HOHOU_test_01"",""wlbm"":""HOHOU_test_01"",""wlmc"":""HOHOU_test_01"",""gys_name"":""北京北冶功能材料有限公司1""}"
+3,3,,,,
+4,3,,,,
+5,4,,,,
+6,4,,,,
+7,5,,,,
+8,5,,,,
+9,6,,,,
+10,6,,,,
+11,7,,,,
