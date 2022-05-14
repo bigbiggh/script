@@ -1,5 +1,6 @@
-步骤1：scrapy shell https://weather.cma.cn     查看返回response是否可以200
-步骤2：浏览器打开想要爬取的网页对应的元素
+步骤1：scrapy startproject getProxy        初始化项目目录
+步骤2：scrapy shell https://weather.cma.cn     查看返回response是否可以200
+步骤3：浏览器打开想要爬取的网页对应的元素
 
 
 
