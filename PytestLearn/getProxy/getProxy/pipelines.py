@@ -16,9 +16,10 @@ class GetproxyPipeline:
         with open(fileName, 'a') as fp:
             for ip in item['ip']:
                 fp.write(ip + '\t')
-                fp.write(item['port'][0] + '\t')
-                fp.write(item['location'][0] + '\t')
-                fp.write(item['type'][0] + '\t')
-                fp.write(item['name'][0] + '\n')
-            time.sleep(1)
+                fp.write(item['port'] + '\t')
+                fp.write(item['location'] + '\t')
+                fp.write(item['type'] + '\t')
+                fp.write(item['name'] + '\t')
+                fp.write(item['source'] + '\n')
+                time.sleep(1)
         return item

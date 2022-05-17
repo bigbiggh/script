@@ -176,43 +176,60 @@
 #     "Content-Length": "2",
 #     "Content-Type": "application/json",
 # }
-import requests,re
-
-
-def get_token():
-    url = "http://192.168.1.203:7777/mes/cloud/v1/auth/oauth/token?grant_type=password&username=admin&password=123&scope=app&client_id=mes-app&client_secret=AE02C169AC75470319AD1B12282E5C61"
-    data = {"username": "admin", "password": "123"}
-    response = requests.request("post", url, data=data)
-    response_dict = eval(response.text)
-    return response_dict['access_token']
-
-get_token()
-
-#     '''
-#     description:        get_api_res
-#                         获取对应接口messageCode;
-#     '''
-#     @classmethod
-def get_api_res(func, url):
-    API_info = {
-        "headers":
-            {
-                "Accept": "application/json, text/plain, */*",
-                "Accept-Language": "zh-CN,zh;q=0.9",
-                "Authorization": "Bearer %s" % get_token(),
-                "Connection": "keep-alive",
-                "Content-Type": "application/json; charset=UTF-8"
-            },
-        "payload": "{\"exported\":false,\"paging\":{\"page\":1,\"size\":12,\"sortings\":[]}}"
-    }
-    response = requests.request(func, url=url, headers=API_info["headers"], data=API_info["payload"])
-    response_json = response.json()
-    return response_json
+# import requests,re
 #
-if __name__ == '__main__':
-    url = "http://192.168.1.203:7777/mes/cloud/v1/module/product/api/tool/fc/saveOrUpdate"
-    msg = get_api_res("POST",url)
-    for i in msg:
-        print(msg)
+#
+# def get_token():
+#     url = "http://192.168.1.203:7777/mes/cloud/v1/auth/oauth/token?grant_type=password&username=admin&password=123&scope=app&client_id=mes-app&client_secret=AE02C169AC75470319AD1B12282E5C61"
+#     data = {"username": "admin", "password": "123"}
+#     response = requests.request("post", url, data=data)
+#     response_dict = eval(response.text)
+#     return response_dict['access_token']
+#
+# get_token()
+#
+# #     '''
+# #     description:        get_api_res
+# #                         获取对应接口messageCode;
+# #     '''
+# #     @classmethod
+# def get_api_res(func, url):
+#     API_info = {
+#         "headers":
+#             {
+#                 "Accept": "application/json, text/plain, */*",
+#                 "Accept-Language": "zh-CN,zh;q=0.9",
+#                 "Authorization": "Bearer %s" % get_token(),
+#                 "Connection": "keep-alive",
+#                 "Content-Type": "application/json; charset=UTF-8"
+#             },
+#         "payload": "{\"exported\":false,\"paging\":{\"page\":1,\"size\":12,\"sortings\":[]}}"
+#     }
+#     response = requests.request(func, url=url, headers=API_info["headers"], data=API_info["payload"])
+#     response_json = response.json()
+#     return response_json
+# #
+# if __name__ == '__main__':
+#     url = "http://192.168.1.203:7777/mes/cloud/v1/module/product/api/tool/fc/saveOrUpdate"
+#     msg = get_api_res("POST",url)
+#     for i in msg:
+#         print(msg)
 
+import requests
+import urllib
+import time
 
+url ='https://touch.dujia.qunar.com/depCities.qunar'
+strhtml = requests.get(url)
+dep_dict = strhtml.json()
+for dep_item in dep_dict['data']:
+    for dep in dep_dict['data'][dep_item]:
+        print(dep)
+        url = 'https://touch.dujia.qunar.com/golfz/domestic/domesticDest?dep={}&needBlackList=true&exclude=&extensionImg=255,175'.format(urllib.request.quote(dep))
+        # time.sleep(1)
+        strhtml = requests.get(url)
+        arrive_dict = strhtml.json()
+        for arrive_item in arrive_dict['data']['originalData']:
+            for arrive_item_2 in arrive_item['subModules']:
+                for query in arrive_item_2['items']:
+                    print(query['query'])

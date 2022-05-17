@@ -14,4 +14,5 @@ class GetproxyItem(scrapy.Item):
     type = scrapy.Field()
     location = scrapy.Field()
     name = scrapy.Field()
-    # source = scrapy.Field()
+    protocol = scrapy.Field()
+    source = scrapy.Field()

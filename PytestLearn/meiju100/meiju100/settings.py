@@ -1,4 +1,4 @@
-# Scrapy settings for getProxy project
+# Scrapy settings for meiju100 project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,17 +7,17 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'getProxy'
+BOT_NAME = 'meiju100'
 
-SPIDER_MODULES = ['getProxy.spiders']
-NEWSPIDER_MODULE = 'getProxy.spiders'
+SPIDER_MODULES = ['meiju100.spiders']
+NEWSPIDER_MODULE = 'meiju100.spiders'
 
-ITEM_PIPELINES = {'getProxy.pipelines.GetproxyPipeline': 100}
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36'
+#USER_AGENT = 'meiju100 (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-# ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -45,13 +45,13 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'getProxy.middlewares.GetproxySpiderMiddleware': 543,
+#    'meiju100.middlewares.Meiju100SpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'getProxy.middlewares.GetproxyDownloaderMiddleware': 543,
+#    'meiju100.middlewares.Meiju100DownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'getProxy.pipelines.GetproxyPipeline': 300,
+#    'meiju100.pipelines.Meiju100Pipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)

@@ -24,6 +24,9 @@ class Proxy360Spider(scrapy.Spider):
             item['location'] = sub.xpath('./tr/td[3]/text()').extract()
             item['type'] = sub.xpath('./tr/td[4]/text()').extract()
             item['name'] = sub.xpath('./tr/td[5]/text()').extract()
-            # item['source'] = sub.xpath('./tr/td[6]')
+            item['protocol'] = 'HTTP'
+            item['source'] = 'proxy360'
             items.append(item)
+            print(items)
+
         return items
